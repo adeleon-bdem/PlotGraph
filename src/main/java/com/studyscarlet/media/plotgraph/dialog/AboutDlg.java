@@ -141,7 +141,7 @@ public class AboutDlg extends javax.swing.JDialog implements ActionListener {
 
         panLogo.setLayout(new javax.swing.BoxLayout(panLogo, javax.swing.BoxLayout.PAGE_AXIS));
 
-        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/studyscarlet/media/plotgraph/icons/banco-de-mexico.png"))); // NOI18N
+        lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/studyscarlet/media/plotgraph/icons/acerca_de.png"))); // NOI18N
         panLogo.add(lblLogo);
 
         lblVersion.setBackground(new java.awt.Color(51, 153, 255));
@@ -154,6 +154,7 @@ public class AboutDlg extends javax.swing.JDialog implements ActionListener {
 
         panInfo.setLayout(new java.awt.BorderLayout(10, 10));
 
+        txtPanInfo.setEditable(false);
         txtPanInfo.setContentType("text/html"); // NOI18N
         txtPanInfo.setText("<html>\r\n  <head>\r\n\r<style>\np {\n    display: block;\n    margin-top: 0;\n    margin-bottom: 0;\n    margin-left: 0;\n    margin-right: 0;\n}\n</style>\n  </head>\r\n  <body>\r\n<p ><b>Versión del Producto:</b> %ProductVersion%\n<p><b>Java:</b> %JavaVersion%\n<p><b>Runtime:</b> %JreVersion%\n<p><b>System:</b> %SystemInfo%\n<p><b>Directorio:</b> %UserDir%\n  </body>\r\n</html>\r\n");
         jScrollPane2.setViewportView(txtPanInfo);

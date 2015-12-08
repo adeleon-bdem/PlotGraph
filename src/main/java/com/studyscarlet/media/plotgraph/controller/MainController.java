@@ -31,6 +31,8 @@
 
 package com.studyscarlet.media.plotgraph.controller;
 
+import com.studyscarlet.media.plotgraph.application.Application;
+import com.studyscarlet.media.plotgraph.dialog.AboutDlg;
 import com.studyscarlet.media.plotgraph.dialog.MessageDlg;
 import com.studyscarlet.media.plotgraph.dialog.enums.DEButtons;
 import com.studyscarlet.media.plotgraph.dialog.enums.DEIcons;
@@ -39,16 +41,15 @@ import com.studyscarlet.media.plotgraph.interfaces.IController;
 import com.studyscarlet.media.plotgraph.interfaces.IModel;
 import com.studyscarlet.media.plotgraph.interfaces.IView;
 import com.studyscarlet.media.plotgraph.interfaces.IWindowController;
-import com.studyscarlet.media.plotgraph.log.AbstractLoggable;
 import com.studyscarlet.media.plotgraph.model.MainModel;
 import com.studyscarlet.media.plotgraph.view.MainView;
+import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.FocusEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.WindowEvent;
 import java.util.EnumSet;
-import java.util.EventObject;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 
@@ -114,12 +115,40 @@ public class MainController extends DefaultController implements IWindowControll
         
         switch (eventCommand) {
             
+            case EV_GRAPH: {
+                // agregar una gráfica nueva
+                /// poner aquí un selector o captura de función...
+                
+                // Buscar el controlador existente
+                IController controller = model.searchController(GraphController.class);
+                if (controller == null) {
+                    controller = new GraphController(this);
+                    model.addController(controller);
+                    controller.initView();
+                    // agregarlo al desktop
+                    view.toComponent().add(controller.getView().toComponent());
+                }
+                // mostrarlo
+                controller.getView().showView();
+                break;
+            }
+            
             case EV_QUIT: {
                 // eliminar todas las vistas.
                 model.removeAllControllers();
                 view.destroyView();
                 // terminar la ejecución
                 logger.info("STOP RUN.");
+                break;
+            }
+            
+            case EV_ABOUT: {
+                // mostrar la ventana de acerca de
+                // mostrar el acerca de
+                AboutDlg about = new AboutDlg((Frame)this.getView(), true, Application.getInstance());
+                about.pack();
+                about.setLocationRelativeTo(view.getMainComponent());
+                about.setVisible(true);
                 break;
             }
             

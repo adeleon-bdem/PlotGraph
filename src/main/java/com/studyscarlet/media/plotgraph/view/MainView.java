@@ -89,6 +89,7 @@ public class MainView extends javax.swing.JFrame implements IViewMain {
 
         jTlbMain = new javax.swing.JToolBar();
         jBtnSalir = new javax.swing.JButton();
+        jBtnGrafica = new javax.swing.JButton();
         jBtnAcercaDe = new javax.swing.JButton();
         jPanStatus = new javax.swing.JPanel();
         jPanMessage = new javax.swing.JPanel();
@@ -97,12 +98,14 @@ public class MainView extends javax.swing.JFrame implements IViewMain {
         jScrMain = new javax.swing.JScrollPane();
         jMnuMain = new javax.swing.JMenuBar();
         jMnuArchivo = new javax.swing.JMenu();
+        jMnuGrafica = new javax.swing.JMenuItem();
         jMnuSalir = new javax.swing.JMenuItem();
         jMnuAyuda = new javax.swing.JMenu();
         jMnuAcercaDe = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle(Application.getInstance().getProductName() + " v." + Application.getInstance().getProductVersion());
+        setPreferredSize(new java.awt.Dimension(640, 480));
 
         jTlbMain.setRollover(true);
 
@@ -118,6 +121,17 @@ public class MainView extends javax.swing.JFrame implements IViewMain {
         jBtnSalir.setPreferredSize(new java.awt.Dimension(90, 64));
         jBtnSalir.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jTlbMain.add(jBtnSalir);
+
+        jBtnGrafica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/studyscarlet/media/plotgraph/icons/chart_curve_32.png"))); // NOI18N
+        jBtnGrafica.setMnemonic('G');
+        jBtnGrafica.setText("Gráfica");
+        jBtnGrafica.setToolTipText(EEvents.EV_GRAPH.getTooltip());
+        jBtnGrafica.setActionCommand(EEvents.EV_GRAPH.getValue());
+        jBtnGrafica.setFocusable(false);
+        jBtnGrafica.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBtnGrafica.setPreferredSize(new java.awt.Dimension(90, 64));
+        jBtnGrafica.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jTlbMain.add(jBtnGrafica);
 
         jBtnAcercaDe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/studyscarlet/media/plotgraph/icons/info_32.png"))); // NOI18N
         jBtnAcercaDe.setMnemonic('A');
@@ -154,6 +168,14 @@ public class MainView extends javax.swing.JFrame implements IViewMain {
 
         jMnuArchivo.setLabel("Archivo");
 
+        jMnuGrafica.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_MASK));
+        jMnuGrafica.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/studyscarlet/media/plotgraph/icons/chart_curve_16.png"))); // NOI18N
+        jMnuGrafica.setMnemonic('G');
+        jMnuGrafica.setText("Gráfica");
+        jMnuGrafica.setToolTipText(EEvents.EV_GRAPH.getTooltip());
+        jMnuGrafica.setActionCommand(EEvents.EV_GRAPH.getValue());
+        jMnuArchivo.add(jMnuGrafica);
+
         jMnuSalir.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_MASK));
         jMnuSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/studyscarlet/media/plotgraph/icons/application_exit_16.png"))); // NOI18N
         jMnuSalir.setMnemonic('S');
@@ -183,12 +205,14 @@ public class MainView extends javax.swing.JFrame implements IViewMain {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBtnAcercaDe;
+    private javax.swing.JButton jBtnGrafica;
     private javax.swing.JButton jBtnSalir;
     private javax.swing.JLabel jLblAvance;
     private javax.swing.JLabel jLblMessage;
     private javax.swing.JMenuItem jMnuAcercaDe;
     private javax.swing.JMenu jMnuArchivo;
     private javax.swing.JMenu jMnuAyuda;
+    private javax.swing.JMenuItem jMnuGrafica;
     private javax.swing.JMenuBar jMnuMain;
     private javax.swing.JMenuItem jMnuSalir;
     private javax.swing.JPanel jPanMessage;
@@ -202,9 +226,11 @@ public class MainView extends javax.swing.JFrame implements IViewMain {
         // Listeners para los botones
         jBtnAcercaDe.addActionListener(controller);
         jBtnSalir.addActionListener(controller);
+        jBtnGrafica.addActionListener(controller);
         // Listeners para los menus
         jMnuAcercaDe.addActionListener(controller);
         jMnuSalir.addActionListener(controller);
+        jMnuGrafica.addActionListener(controller);
     }
 
     @Override

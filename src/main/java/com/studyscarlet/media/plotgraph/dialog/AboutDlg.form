@@ -21,7 +21,7 @@
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
-    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,101,0,0,2,106"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,101,0,0,1,-32"/>
   </AuxValues>
 
   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
@@ -40,7 +40,7 @@
         <Component class="javax.swing.JLabel" name="lblLogo">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/studyscarlet/media/plotgraph/icons/banco-de-mexico.png"/>
+              <Image iconType="3" name="/com/studyscarlet/media/plotgraph/icons/acerca_de.png"/>
             </Property>
           </Properties>
         </Component>
@@ -82,6 +82,7 @@
           <SubComponents>
             <Component class="javax.swing.JTextPane" name="txtPanInfo">
               <Properties>
+                <Property name="editable" type="boolean" value="false"/>
                 <Property name="contentType" type="java.lang.String" value="text/html" noResource="true"/>
                 <Property name="text" type="java.lang.String" value="&lt;html&gt;&#xd;&#xa;  &lt;head&gt;&#xd;&#xa;&#xd;&lt;style&gt;&#xa;p {&#xa;    display: block;&#xa;    margin-top: 0;&#xa;    margin-bottom: 0;&#xa;    margin-left: 0;&#xa;    margin-right: 0;&#xa;}&#xa;&lt;/style&gt;&#xa;  &lt;/head&gt;&#xd;&#xa;  &lt;body&gt;&#xd;&#xa;&lt;p &gt;&lt;b&gt;Versi&#xf3;n del Producto:&lt;/b&gt; %ProductVersion%&#xa;&lt;p&gt;&lt;b&gt;Java:&lt;/b&gt; %JavaVersion%&#xa;&lt;p&gt;&lt;b&gt;Runtime:&lt;/b&gt; %JreVersion%&#xa;&lt;p&gt;&lt;b&gt;System:&lt;/b&gt; %SystemInfo%&#xa;&lt;p&gt;&lt;b&gt;Directorio:&lt;/b&gt; %UserDir%&#xa;  &lt;/body&gt;&#xd;&#xa;&lt;/html&gt;&#xd;&#xa;"/>
               </Properties>

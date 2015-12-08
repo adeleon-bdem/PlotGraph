@@ -50,6 +50,9 @@ public enum EEvents {
     // Cerrar el diálogo del about.
     EV_CLOSE_ABOUT("ev:about:close", "Cerrar", "Cerrar el diálogo del acerca de"),
     
+    // Mostrar nueva ventana de gráficas.
+    EV_GRAPH("ev:graph", "Gráfica", "Mostrar nueva ventana de gráficas"),
+    
     // Salir
     EV_QUIT("ev:quit", "Salir", "Sale de la aplicación"),
 
